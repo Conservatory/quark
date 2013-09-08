@@ -1,0 +1,1883 @@
+commit 02b32dc656ef56314ef7c8990c12c37a72107a8d
+Author: Jan Michael Alonzo <jmalonzo@webkit.org>
+Date:   Sat Aug 7 21:23:47 2010 +1000
+
+    PyWebKitGtk 1.1.8 news
+
+ NEWS |   11 +++++++++++
+ 1 files changed, 11 insertions(+), 0 deletions(-)
+
+commit 814ea19a60644cd1baaabbe04375dbc98f2d0674
+Author: Jan Michael Alonzo <jmalonzo@webkit.org>
+Date:   Sat Aug 7 20:55:34 2010 +1000
+
+    PyWebKitGtk 1.1.8
+
+ configure.ac |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit 1914b0b7195fe0d5bc343fe67fd686d600c17bfb
+Author: Jan Michael Alonzo <jmalonzo@webkit.org>
+Date:   Sat Aug 7 20:28:38 2010 +1000
+
+    Issue 48: segfault when calling WebBackForwardList.get_back_list_with_limit()
+    http://goo.gl/w46m
+    
+    Patch by Lucian Branescu.
+
+ webkit/webkit.override |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit 4fbc010b5621b141ebfc6bf1f1a52d3c53c566f0
+Author: Jan Michael Alonzo <jmalonzo@webkit.org>
+Date:   Sat Aug 7 20:24:11 2010 +1000
+
+    Remove accidenttally added compiled file
+
+ webkit/__init__.pyc |  Bin 194 -> 0 bytes
+ 1 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 64d9dcad2f07dd51eeaa3f10adc28ae5fa78c89b
+Author: Jan Michael Alonzo <jmalonzo@webkit.org>
+Date:   Sat Aug 7 20:21:19 2010 +1000
+
+    Issue 40:	Segmentation fault on destroy
+    http://bit.ly/cV7cL2
+    
+    Call gobject.threads_init() in __init__.py
+
+ webkit/__init__.py    |    2 ++
+ webkit/__init__.pyc   |  Bin 0 -> 194 bytes
+ webkit/webkitmodule.c |    9 +++------
+ 3 files changed, 5 insertions(+), 6 deletions(-)
+
+commit b5761b363149273d85374af2910bc3acbd695486
+Author: Jan Michael Alonzo <jmalonzo@webkit.org>
+Date:   Sat Aug 7 19:39:14 2010 +1000
+
+    Issue 46:	Install the pkgconfig file on make install
+    http://code.google.com/p/pywebkitgtk/issues/detail?id=46
+
+ Makefile.am |    3 +++
+ 1 files changed, 3 insertions(+), 0 deletions(-)
+
+commit 111335bd796bd8b9f28df30f1cb9f229ad55aa06
+Author: Jan Michael Alonzo <jmalonzo@webkit.org>
+Date:   Sat Aug 7 19:23:45 2010 +1000
+
+    Issue 36: Compiled code is recompiled during 'make install'
+    http://code.google.com/p/pywebkitgtk/issues/detail?id=36
+    
+    Patch by dmacks.
+
+ Makefile.am |    5 ++---
+ 1 files changed, 2 insertions(+), 3 deletions(-)
+
+commit 452fdfd1cbb0697e7ba4c1d39e0c7f05afb25c8f
+Author: Jan Michael Alonzo <jmalonzo@webkit.org>
+Date:   Sat Aug 7 18:41:08 2010 +1000
+
+    Issue 47: pkg-config variable 'codegendir' should be taken from pygobject-2.0
+    http://code.google.com/p/pywebkitgtk/issues/detail?id=47
+    
+    Patch by thomas.
+
+ configure.ac |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit 55482e9a9fcd7d400714419846ba21966b67edcc
+Author: Jan Michael Alonzo <jmalonzo@webkit.org>
+Date:   Sat Aug 7 18:32:24 2010 +1000
+
+    Issue 44:	Expose the enums
+    http://code.google.com/p/pywebkitgtk/issues/detail?id=44
+    
+    Patch by sayamindu.
+
+ webkit/webkit-1.1-types.defs  |   20 ++++++++++----------
+ webkit/webkit-base-types.defs |    4 ++--
+ webkit/webkitmodule.c         |    2 ++
+ 3 files changed, 14 insertions(+), 12 deletions(-)
+
+commit 8e80637bcdfa7ab53d65b086c4a85e6ed319f6a7
+Author: Jan Michael Alonzo <jmalonzo@webkit.org>
+Date:   Sat Aug 7 18:28:55 2010 +1000
+
+    Issue 51: Add support for getting a NetworkResponse from a WebFrame
+    http://code.google.com/p/pywebkitgtk/issues/detail?id=51
+    
+    Patch by pieterennes.
+
+ webkit/webkit-1.1.defs |    6 ++++++
+ 1 files changed, 6 insertions(+), 0 deletions(-)
+
+commit 41ba387b8ebabd5cdd55b9fc13f55f89b201bd3f
+Author: Jan Michael Alonzo <jmalonzo@webkit.org>
+Date:   Sat Oct 3 14:06:14 2009 +1000
+
+    PyWebKitGtk 1.1.7
+
+ NEWS         |    5 +++++
+ configure.ac |    2 +-
+ 2 files changed, 6 insertions(+), 1 deletions(-)
+
+commit bf83af7661e02d4666462435b06425203281d5b1
+Author: Jan Michael Alonzo <jmalonzo@webkit.org>
+Date:   Sat Oct 3 14:05:03 2009 +1000
+
+    Distcheck fixes
+
+ Makefile.am |    8 ++++----
+ 1 files changed, 4 insertions(+), 4 deletions(-)
+
+commit 52343aedaad2779422f31f1374f0b2c5c2683268
+Author: Jan Michael Alonzo <jmalonzo@webkit.org>
+Date:   Wed Sep 23 18:23:34 2009 +1000
+
+    Add 'Page Properties' context menu item as a way to use WebDataSource
+
+ demos/browser.py |   28 ++++++++++++++++++++++++++++
+ 1 files changed, 28 insertions(+), 0 deletions(-)
+
+commit 900f8825b80d3491844fb2f883c203f7915bbce4
+Author: Jan Michael Alonzo <jmalonzo@webkit.org>
+Date:   Wed Sep 23 18:23:05 2009 +1000
+
+    Provide overrides for functions not automatically wrapped
+
+ webkit/webkit.override |   68 +++++++++++++++++++++++++++++++++++++++++++++--
+ 1 files changed, 65 insertions(+), 3 deletions(-)
+
+commit 7f2f39221a70d3ee3566da2bdd32fc3a240ea993
+Author: Jan Michael Alonzo <jmalonzo@webkit.org>
+Date:   Wed Sep 23 18:22:38 2009 +1000
+
+    Provide wrapper to get WebDataSources from WebFrame
+
+ webkit/webkit-1.1.defs |   12 ++++++++++++
+ 1 files changed, 12 insertions(+), 0 deletions(-)
+
+commit 221ee3712ca55ddaac467b25f8cf64bd010a6c36
+Author: Jan Michael Alonzo <jmalonzo@webkit.org>
+Date:   Sun Sep 13 19:53:24 2009 +1000
+
+    Rename tabbed_browser to browser
+
+ demos/browser.py        |  427 +++++++++++++++++++++++++++++++++++++++++++++++
+ demos/tabbed_browser.py |  427 -----------------------------------------------
+ 2 files changed, 427 insertions(+), 427 deletions(-)
+
+commit 843bd01f99fce99707d03d0fd8abbd757396ab90
+Author: Jan Michael Alonzo <jmalonzo@webkit.org>
+Date:   Sun Sep 13 11:36:57 2009 +1000
+
+    Issue 39:	Missing gthread-2.0 link at buildtime
+    http://code.google.com/p/pywebkitgtk/issues/detail?id=39
+    
+    Add gthread-2.0 to the list of deps.
+
+ configure.ac |    3 ++-
+ 1 files changed, 2 insertions(+), 1 deletions(-)
+
+commit a6eef80dc834f0015c5e5d95ac3f796efbe846f9
+Author: Jan Michael Alonzo <jmalonzo@webkit.org>
+Date:   Sun Sep 13 11:33:48 2009 +1000
+
+    Issue 38:	import webkit failed
+    http://code.google.com/p/pywebkitgtk/issues/detail?id=38
+    
+    Fix module import by putting the webkit module under the 'webkit' directory
+    and adding an __init__.py to import the objects and functions.
+
+ Makefile.am        |   11 +++++++++--
+ webkit/__init__.py |   22 ++++++++++++++++++++++
+ 2 files changed, 31 insertions(+), 2 deletions(-)
+
+commit e64eb342ee8c9c2534433b1d73a555b18b84b45b
+Author: Jan Michael Alonzo <jmalonzo@webkit.org>
+Date:   Sun Sep 13 09:28:25 2009 +1000
+
+    Add view source mode and fix tab title issue in the demo browser
+
+ demos/tabbed_browser.py |   60 +++++++++++++++++++++++++++++++---------------
+ 1 files changed, 40 insertions(+), 20 deletions(-)
+
+commit daab4151f17c7f547e29fd331383c4ae532b072f
+Author: Jan Michael Alonzo <jmalonzo@webkit.org>
+Date:   Sat Sep 12 17:01:35 2009 +1000
+
+    Provide binding for WebResource and WebDataSource
+
+ webkit/webkit-1.1-types.defs |   14 ++++++
+ webkit/webkit-1.1.defs       |  103 ++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 117 insertions(+), 0 deletions(-)
+
+commit a8ce2a424ef1fc80f3303605f72d9b5d2172850c
+Author: Jan Michael Alonzo <jmalonzo@webkit.org>
+Date:   Sat Sep 12 15:21:42 2009 +1000
+
+    Provide bindings for WebDatabase and SecurityOrigin classes
+
+ webkit/webkit-1.1-types.defs |   14 +++++
+ webkit/webkit-1.1.defs       |  128 ++++++++++++++++++++++++++++++++++++++++++
+ webkit/webkit.override       |    2 +
+ 3 files changed, 144 insertions(+), 0 deletions(-)
+
+commit dfdcab6bd4712b4c49a14d10867d996d3aee30e8
+Author: Jan Michael Alonzo <jmalonzo@webkit.org>
+Date:   Sat Sep 12 11:25:41 2009 +1000
+
+    Support srcdir not equal to builddir in the Makefile
+
+ Makefile.am |   43 ++++++++++++++++++++++---------------------
+ 1 files changed, 22 insertions(+), 21 deletions(-)
+
+commit 891b746a65378aed4ee432b4edbeeca10cdea817
+Author: Jan Michael Alonzo <jmalonzo@webkit.org>
+Date:   Tue Sep 8 08:36:09 2009 +1000
+
+    Add test for NetworkRequest
+
+ tests/test_networkrequest.py |   24 ++++++++++++++++++++++++
+ webkit/webkit.override       |   27 +++++++++++++++++++++++++++
+ 2 files changed, 51 insertions(+), 0 deletions(-)
+
+commit be5c10fdb29c3029018264cdd0a75bd07a57f863
+Author: Jan Michael Alonzo <jmalonzo@webkit.org>
+Date:   Tue Sep 8 08:31:36 2009 +1000
+
+    Add NetworkResponse object binding
+    
+    	new file:   tests/test_networkresponse.py
+    	modified:   webkit/webkit-1.1-types.defs
+    	modified:   webkit/webkit-1.1.defs
+    	modified:   webkit/webkit.override
+
+ tests/test_networkresponse.py |   24 ++++++++++++++++++++++++
+ webkit/webkit-1.1-types.defs  |    7 +++++++
+ webkit/webkit-1.1.defs        |   28 ++++++++++++++++++++++++++++
+ webkit/webkit.override        |   28 ++++++++++++++++++++++++++++
+ 4 files changed, 87 insertions(+), 0 deletions(-)
+
+commit 344cd7353bb91846ecfccd13273d86868d4baf24
+Author: Jan Michael Alonzo <jmalonzo@webkit.org>
+Date:   Tue Sep 8 08:02:50 2009 +1000
+
+    Add missing WebView methods
+
+ webkit/webkit-1.1.defs |   50 ++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 files changed, 50 insertions(+), 0 deletions(-)
+
+commit 73867c85961397655a2eb13280db87634c636d30
+Author: Jan Michael Alonzo <jmalonzo@webkit.org>
+Date:   Tue Sep 8 08:02:34 2009 +1000
+
+    Add missing enum types
+
+ webkit/webkit-1.1-types.defs |   86 ++++++++++++++++++++++++++++++++++++++++++
+ 1 files changed, 86 insertions(+), 0 deletions(-)
+
+commit 369ec31ab78adefa4941ae86097b737cebfbb393
+Author: Jan Michael Alonzo <jmalonzo@webkit.org>
+Date:   Sat Aug 8 11:30:45 2009 +1000
+
+    PyWebKitGtk 1.1.6
+
+ NEWS |    8 ++++++++
+ 1 files changed, 8 insertions(+), 0 deletions(-)
+
+commit 4db58caf65f2c4511fd798452aa2f49111866899
+Author: Jan Michael Alonzo <jmalonzo@webkit.org>
+Date:   Sat Aug 8 11:11:09 2009 +1000
+
+    Update tabbe_browser and fix some issues with title handling
+
+ demos/tabbed_browser.py |   45 +++++++++++++++++++--------------------------
+ 1 files changed, 19 insertions(+), 26 deletions(-)
+
+commit e20baae78ea2619b272a86cb86ac908da7a9632a
+Author: Jan Michael Alonzo <jmalonzo@webkit.org>
+Date:   Fri Aug 7 21:52:22 2009 +1000
+
+    wrap webkit_web_view_load_uri
+
+ webkit/webkit-1.1.defs |    9 +++++++++
+ 1 files changed, 9 insertions(+), 0 deletions(-)
+
+commit 40d9283b047a007f7683dad8c4091b9956654b9f
+Author: Jan Michael Alonzo <jmalonzo@webkit.org>
+Date:   Fri Aug 7 21:41:06 2009 +1000
+
+    fix warnings in the sample code
+
+ demos/inspector.py      |    6 +-----
+ demos/tabbed_browser.py |    3 ++-
+ 2 files changed, 3 insertions(+), 6 deletions(-)
+
+commit af212d6d9c4be96a108ea172b44328f04ba6a555
+Author: Jan Michael Alonzo <jmalonzo@webkit.org>
+Date:   Fri Aug 7 21:30:00 2009 +1000
+
+    version bump to 1.1.6
+
+ configure.ac |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+commit f824683945f44e59bcf74340e1cad5f085e692a9
+Author: Jan Michael Alonzo <jmalonzo@webkit.org>
+Date:   Fri Aug 7 21:22:37 2009 +1000
+
+    make uri param of webkit_network_request_new a property
+
+ webkit/webkit-1.0.2.defs |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 8ab84e5be59a4cf2867e411141448dbf1db9ab81
+Author: Jan Michael Alonzo <jmalonzo@webkit.org>
+Date:   Fri Aug 7 21:15:14 2009 +1000
+
+    Change pythondir/pyexecdir from gtk-2.0 to webkit-1.0
+
+ Makefile.am |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 0c104807ec725c16fc5b54cd21ad9f95605c1444
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Wed Jul 22 07:43:36 2009 +1000
+
+    initialize glib's threading system automatically
+
+ demos/tabbed_browser.py |    1 -
+ webkit/webkitmodule.c   |    4 ++++
+ 2 files changed, 4 insertions(+), 1 deletions(-)
+
+commit 48e85e6d2f8ff24b23c144fcde3608fed97a3639
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Sat Jun 20 11:16:44 2009 +1000
+
+    Issue 35:	Non-portable use of python-config
+    
+    http://code.google.com/p/pywebkitgtk/issues/detail?id=35
+    
+    Remove manual override of PYTHON_INCLUDES as it seems unnecessary.
+    
+    	modified:   configure.ac
+
+ configure.ac |    3 ---
+ 1 files changed, 0 insertions(+), 3 deletions(-)
+
+commit e62a93cf0883552d8a1fb3f8aa9f769354ba28d2
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Sat Jun 20 07:59:41 2009 +1000
+
+    Issue 34:  	 Wrap webkit_web_view_move_cursor
+    
+    http://code.google.com/p/pywebkitgtk/issues/detail?id=34
+    
+    Patch by Sayamindu.
+
+ webkit/webkit-1.1.defs |   10 ++++++++++
+ 1 files changed, 10 insertions(+), 0 deletions(-)
+
+commit 0ee03a0aa128954b9a232788b778489d596eb5a4
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Tue Jun 16 21:06:32 2009 +1000
+
+    Issue 33:  	 Wrap webkit_web_view_copy_clipboard and fix webkit_web_view_cut_clipboard
+    
+    http://code.google.com/p/pywebkitgtk/issues/detail?id=33
+    
+    Patch by Sayamindu
+
+ webkit/webkit-1.0.2.defs |    8 +++++++-
+ 1 files changed, 7 insertions(+), 1 deletions(-)
+
+commit e140e0d805e44edea49be6f45ff4a3f4af950fea
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Sat Jun 13 17:15:59 2009 +1000
+
+    Issue 31:  	 Error building on OSX
+    
+    http://code.google.com/p/pywebkitgtk/issues/detail?id=31
+    
+    Define NO_IMPORT_PYGTK before pygtk include
+    
+    	modified:   webkit/webkit.override
+
+ webkit/webkit.override |    1 +
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+
+commit 67416e013d993c96f856c08c414d024e929c115f
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Sat Jun 13 16:08:14 2009 +1000
+
+    Issue 32:  	 Fix can_*_clipboard return types
+    
+    http://code.google.com/p/pywebkitgtk/issues/detail?id=32
+    
+    Return boolean on the can_*_clipboard functions
+
+ webkit/webkit-1.0.2.defs |    6 +++---
+ 1 files changed, 3 insertions(+), 3 deletions(-)
+
+commit e39d5e22d9c35b9a894e555eccc0e4fce8ab7269
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Fri May 29 07:43:42 2009 +1000
+
+    PyWebKitGtk 1.1.5 Release
+
+ NEWS         |   14 ++++++++++++++
+ configure.ac |    2 +-
+ 2 files changed, 15 insertions(+), 1 deletions(-)
+
+commit edffaf20ea64c9e21a83b1733fbd5bc2f7a5706a
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Fri May 29 07:31:31 2009 +1000
+
+    Add WebFrame.print_full() example
+
+ demos/tabbed_browser.py |    8 ++++++++
+ 1 files changed, 8 insertions(+), 0 deletions(-)
+
+commit 3adde438638d8c2dfcc686ecf93e59208abe9d70
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Fri May 29 07:18:25 2009 +1000
+
+    Add printing support
+    http://code.google.com/p/pywebkitgtk/issues/detail?id=30
+    
+    Patch by Sayamindu (http://code.google.com/u/sayamindu/)
+
+ configure.ac           |    2 +-
+ webkit/webkit-1.1.defs |   17 +++++++++++++++++
+ webkit/webkit.override |    1 +
+ 3 files changed, 19 insertions(+), 1 deletions(-)
+
+commit d80792b79db4ee369fc0dafde63b61b45b8ae5a6
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Fri May 29 07:14:24 2009 +1000
+
+    Use python-config to populate the include paths
+
+ configure.ac |    5 +++--
+ 1 files changed, 3 insertions(+), 2 deletions(-)
+
+commit 2ff8d6157057ffed650a4dd08e092d86b1d33073
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Wed Apr 1 19:07:17 2009 +1100
+
+    PyWebKitGtk 1.1.4
+
+ Makefile.am  |    2 ++
+ NEWS         |   11 ++++++++---
+ configure.ac |    2 +-
+ 3 files changed, 11 insertions(+), 4 deletions(-)
+
+commit ebbed9003f3c6fa81d7340af4b297a5495c0f369
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Wed Apr 1 18:57:42 2009 +1100
+
+    remove config.lt when issuing make clean target
+
+ Makefile.am |    1 +
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+
+commit 39349f0e9ce42eacf63053da2126bcd5d9875e83
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Wed Apr 1 18:53:59 2009 +1100
+
+    Issue 27: WebPolicyDecision Missing
+    http://code.google.com/p/pywebkitgtk/issues/detail?id=27
+    
+    Reported and patched by DoomedFox
+
+ webkit/webkit-1.1-types.defs |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit 0047d6aeecbaad4e3703c9455087343ce3fefbc9
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Mon Mar 30 20:46:37 2009 +1100
+
+    fix r122 - checking for minimum webkitgtk version
+
+ configure.ac |    8 ++++----
+ 1 files changed, 4 insertions(+), 4 deletions(-)
+
+commit ead82b960596c0903e1edb5a958ca872bab9290d
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Mon Mar 30 20:27:28 2009 +1100
+
+    [PATCH] libtool-2.2 compatibility
+    http://code.google.com/p/pywebkitgtk/issues/detail?id=26
+
+ configure.ac |    2 ++
+ 1 files changed, 2 insertions(+), 0 deletions(-)
+
+commit d5193f692be600c1920b0ca042040d2324cf3689
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Mon Mar 30 20:26:59 2009 +1100
+
+    add minimum dependency on webkitgtk 1.1.3
+
+ configure.ac |    7 +++++--
+ 1 files changed, 5 insertions(+), 2 deletions(-)
+
+commit a4c5d7c8627f55d241562a4755c93d976e747958
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Wed Mar 18 15:57:43 2009 +1100
+
+    PyWebKitGtk 1.1.3
+
+ NEWS         |    7 +++++++
+ configure.ac |    2 +-
+ 2 files changed, 8 insertions(+), 1 deletions(-)
+
+commit 61f752411341fc07af6215d66f0401cd46db3979
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Sun Mar 15 12:24:02 2009 +1100
+
+    Change WebHistoryItem constructor API to accept 'uri' and 'title' keywords
+
+ tests/test_webbackforwardlist.py |   61 ++++++++++++++++++++++++++++++++++++++
+ webkit/webkit-1.0.2.defs         |    7 ----
+ webkit/webkit.override           |   29 ++++++++++++++++++
+ 3 files changed, 90 insertions(+), 7 deletions(-)
+
+commit 7a4a58aad98b3209eb393157bfcba03f74f0ca28
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Sun Mar 15 11:54:42 2009 +1100
+
+    added WebFrame test
+
+ tests/test_webframe.py |   23 +++++++++++++++++++++++
+ 1 files changed, 23 insertions(+), 0 deletions(-)
+
+commit 73af0fc9f26be8b294769bd5f372c8edec0c8964
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Sun Mar 15 11:48:38 2009 +1100
+
+    updated copyright header
+
+ javascriptcore/javascriptcore_types.c |    2 +-
+ javascriptcore/javascriptcore_types.h |    2 +-
+ webkit/webkit-1.0.2.defs              |    2 +-
+ webkit/webkit-1.1-types.defs          |    2 +-
+ webkit/webkit-1.1.defs                |    2 +-
+ webkit/webkit-base-types.defs         |    2 +-
+ webkit/webkit.override                |    2 +-
+ webkit/webkitmodule.c                 |    2 +-
+ 8 files changed, 8 insertions(+), 8 deletions(-)
+
+commit 7b4d809fc72a05878387c4dd0103497a8b82061b
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Sun Mar 15 11:35:42 2009 +1100
+
+    wrap WebKitDownload API
+
+ webkit/webkit-1.1-types.defs |   31 ++++++++++++++++
+ webkit/webkit-1.1.defs       |   83 ++++++++++++++++++++++++++++++++++++++++++
+ webkit/webkit.override       |   12 ++++++
+ 3 files changed, 126 insertions(+), 0 deletions(-)
+
+commit 8c0263501177def9824ae707f94896062e3eb01c
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Sun Mar 15 10:38:14 2009 +1100
+
+    bump version in preparation for 1.1.2
+
+ configure.ac |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 8f2208b9b8902d7cd875027656f7310543d3497a
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Sat Mar 7 13:16:02 2009 +1100
+
+    PyWebKitGtk 1.1 Release
+
+ Makefile.am  |    5 +++--
+ NEWS         |    5 +++--
+ configure.ac |    6 +++---
+ 3 files changed, 9 insertions(+), 7 deletions(-)
+
+commit 8692d477bf9cce53e98a32b30169afd982f8d049
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Mon Mar 2 19:04:43 2009 +1100
+
+    pywebkitgtk 1.1 NEWS
+
+ NEWS |    9 +++++++++
+ 1 files changed, 9 insertions(+), 0 deletions(-)
+
+commit 25e3e7c24330b9e13fdb590414e0b230cf8c3788
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Mon Mar 2 19:00:11 2009 +1100
+
+    API binding updates per WebKitGtk 1.1
+
+ webkit/webkit-1.1.defs |   55 ++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 files changed, 55 insertions(+), 0 deletions(-)
+
+commit f54b9a13f9a7b4d0d649272b403ba2adf96c4c0c
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Mon Mar 2 18:30:12 2009 +1100
+
+    fix compile warning - return NULL instead of -1
+
+ webkit/webkit.override |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit e86d3b8bfaf968d642483c83a615b15be53019b5
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Mon Mar 2 18:27:01 2009 +1100
+
+    Remove support for midori's gjs.
+    
+    Need to think about this stuff first.
+
+ Makefile.am                           |   17 -
+ configure.ac                          |   18 -
+ gjs/gjs.defs                          |  120 ----
+ gjs/gjs.h                             |  128 ----
+ gjs/gjs.override                      |   68 ---
+ gjs/gjs_internal.c                    | 1046 ---------------------------------
+ javascriptcore/javascriptcore_types.c |   16 -
+ javascriptcore/javascriptcore_types.h |   13 -
+ webkit/webkitmodule.c                 |   12 -
+ 9 files changed, 0 insertions(+), 1438 deletions(-)
+
+commit b3a0061f606edd30db5047ca46f1f331d7d10540
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Sun Feb 1 18:13:03 2009 +1100
+
+    Initialize glib threads since it's needed by WebKitGtk soup http-backend build.
+    
+    	modified:   demos/tabbed_browser.py
+
+ demos/tabbed_browser.py |    3 ++-
+ 1 files changed, 2 insertions(+), 1 deletions(-)
+
+commit 8ec797a6a743b33289fe8589c814eb8bf0a8ec50
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Sun Feb 1 18:09:30 2009 +1100
+
+    Fix some of the wrappings to WebNavigationAction and use override if we have
+    to.
+    
+    Also start adding some tests. Not automated yet.
+
+ tests/test_webnavigationaction.py |   25 +++++++++++++++++++++++++
+ webkit/webkit-1.1-types.defs      |    8 ++++----
+ webkit/webkit-1.1.defs            |    8 ++++----
+ webkit/webkit.override            |   31 +++++++++++++++++++++++++++++++
+ 4 files changed, 64 insertions(+), 8 deletions(-)
+
+commit 1f9a74d3da488c67d669eb5c8a6ffe1ef89096c0
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Sun Feb 1 18:01:13 2009 +1100
+
+    Fix crash when instantiating a webkit.NetworkRequest object.
+    
+    https://bugs.launchpad.net/ubuntu/+source/pywebkitgtk/+bug/321910
+    python crashes when instantiating a webkit.NetworkRequest() object from the python-webkitgtk package
+    
+    This happens because we assumed that WebKitNetworkRequest has a 'uri'
+    property which it doesn't and we're wrapping using 'properties'. Switched it
+    back to using 'parameters' in the .defs file instead.
+    
+    	modified:   webkit/webkit-1.0.2.defs
+
+ webkit/webkit-1.0.2.defs |    6 +++---
+ 1 files changed, 3 insertions(+), 3 deletions(-)
+
+commit f8fb7ba986ee36ba0e0d21d99d72f25bb4a9cf6e
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Sat Jan 24 21:25:00 2009 +1100
+
+    Wrapped the following:
+    
+     * WebKitWebView
+       - reload_bypass_cache
+       - can_show_mime_type
+    
+     * WebKitPolicyDecision and methods
+     * WebKitNavigationAction and methods
+
+ webkit/webkit-1.0.2.defs     |   24 -------------
+ webkit/webkit-1.1-types.defs |   28 +++++++++++++++
+ webkit/webkit-1.1.defs       |   79 ++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 107 insertions(+), 24 deletions(-)
+
+commit 69fb5e287af19d4d2600a0c34a558ad050e1e402
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Sat Jan 24 20:27:00 2009 +1100
+
+    remove old webbrowser example
+
+ demos/webbrowser.py |  331 ---------------------------------------------------
+ 1 files changed, 0 insertions(+), 331 deletions(-)
+
+commit c2cd0b091a011f61e6242b4c7644bffa4bf7c32c
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Sat Jan 24 20:15:57 2009 +1100
+
+    move -dev defs to 1.1 in preparation for 1.1 release
+
+ Makefile.am                  |   11 +------
+ configure.ac                 |    9 ------
+ webkit/webkit-1.1-types.defs |   34 ++++++++++++++++++++++
+ webkit/webkit-1.1.defs       |   63 ++++++++++++++++++++++++++++++++++++++++++
+ webkit/webkit-dev-types.defs |   34 ----------------------
+ webkit/webkit-dev.defs       |   63 ------------------------------------------
+ 6 files changed, 99 insertions(+), 115 deletions(-)
+
+commit 9e28f33e718e4332c09ab267baea833e0388c838
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Tue Jan 20 01:30:14 2009 +1100
+
+    Remove set_window_features from the WebView API. This was made internal in
+    upstream changeset 39223.
+    
+    http://code.google.com/p/pywebkitgtk/issues/detail?id=22
+    Undefined symbol
+
+ webkit/webkit-dev.defs |    9 ---------
+ 1 files changed, 0 insertions(+), 9 deletions(-)
+
+commit f0b27be49904f043ff8fe8474928f8288b1259a4
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Tue Jan 20 01:29:51 2009 +1100
+
+    install the .defs files into the correct defs folder
+
+ Makefile.am |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit 58f4082c0e13ac3758a0a8fecc6b68ec16bc322e
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Sun Nov 30 18:06:41 2008 +1100
+
+    Add support for creating new windows
+    
+    Recently added upstream API:
+    ChromeClient::createWindow and friends need to be implemented
+    http://trac.webkit.org/changeset/38834
+    
+    Add example usage in tabbed_browser as well.
+
+ demos/tabbed_browser.py      |  107 +++++++++++++++++++++++++++++++-----------
+ webkit/webkit-dev-types.defs |    7 +++
+ webkit/webkit-dev.defs       |   32 ++++++++++++
+ 3 files changed, 119 insertions(+), 27 deletions(-)
+
+commit 2dbb6ab881d99112323ccf82030ba332cc6f6e91
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Wed Nov 26 00:01:32 2008 +1100
+
+    make sure we destroy the webview on tab/window destroy
+
+ demos/tabbed_browser.py |   14 +++++++++++---
+ 1 files changed, 11 insertions(+), 3 deletions(-)
+
+commit 125c6dbc8e08995a39e8da147a900bf54dc1085c
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Mon Nov 24 15:12:33 2008 +1100
+
+    add fancy notebook tab label, tabbed_browser todo list, removed status bar, and add an 'add new tab' toolbar button
+
+ demos/tabbed_browser.py |  131 +++++++++++++++++++++++++++++++----------------
+ 1 files changed, 87 insertions(+), 44 deletions(-)
+
+commit f4c8697d0c67898e028d8bfdb3fc209b2e3d82d3
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Sun Nov 23 18:30:10 2008 +1100
+
+    added tabbed browser
+
+ demos/tabbed_browser.py |  301 +++++++++++++++++++++++++++++++++++++++++++++++
+ 1 files changed, 301 insertions(+), 0 deletions(-)
+
+commit 9c3eb4ee4ae8b2247ce7f82e0e3470a6ebd81861
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Sat Nov 22 16:42:59 2008 +1100
+
+    move code around; move non-webkit gtk stuff at the bottom
+
+ demos/webbrowser.py |  234 ++++++++++++++++++++++++---------------------------
+ 1 files changed, 109 insertions(+), 125 deletions(-)
+
+commit 1a1e01ef18e216529325ecadf421b07da1c319a3
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Sat Nov 22 16:37:30 2008 +1100
+
+    Improve the demo browser
+    
+     - move the zoom buttons in the context menu
+     - minor refactorings
+     - remove the bottom right, non-working eventbox (meh)
+
+ Makefile.am         |    1 +
+ demos/inspector.py  |    2 +
+ demos/webbrowser.py |  152 +++++++++++++++++++++++++++++---------------------
+ 3 files changed, 91 insertions(+), 64 deletions(-)
+
+commit 0a64227b3aa52a9ed47b72a121a367c00101dd36
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Fri Nov 21 22:44:54 2008 +1100
+
+    Listen to ::inspect-web-view and fix the callback to return the new-ish WebView
+
+ demos/inspector.py |   11 ++++++-----
+ 1 files changed, 6 insertions(+), 5 deletions(-)
+
+commit 52a5c4315967f653dd919a2d8f1b532f5d45c18e
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Fri Nov 21 21:29:53 2008 +1100
+
+    Remove broken API - webkit_web_frame_new
+    
+    Please see upstream r38076 for more info.
+    
+    r38076: http://trac.webkit.org/changeset/38076
+
+ webkit/webkit-1.0.2.defs |   10 ----------
+ 1 files changed, 0 insertions(+), 10 deletions(-)
+
+commit 761a66bdaa4bdb595e4e9d9995ea343ad1504fc5
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Fri Nov 21 19:33:13 2008 +1100
+
+    Wrap WebKit/Gtk WebKitWebInspector.
+        - also add demos/inspector.py as a sample implementation
+    
+    The usability of Python WebInspector depends on an upstream
+    WebKit/Gtk bug
+    
+    Bug: https://bugs.webkit.org/show_bug.cgi?id=22396
+    
+    Also take the time to split WebKit/Gtk types into separate definitions file.
+
+ Makefile.am                   |   23 ++++++++---
+ demos/inspector.py            |   80 ++++++++++++++++++++++++++++++++++++++
+ demos/webbrowser.py           |   14 ++++--
+ webkit/webkit-1.0.2.defs      |   67 +-------------------------------
+ webkit/webkit-base-types.defs |   85 +++++++++++++++++++++++++++++++++++++++++
+ webkit/webkit-dev-types.defs  |   27 +++++++++++++
+ webkit/webkit-dev.defs        |   21 ++++++++++
+ webkit/webkit.override        |    5 +-
+ 8 files changed, 243 insertions(+), 79 deletions(-)
+
+commit 3c43ff9d14e046e5a932e76b881a02711367a65a
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Fri Nov 21 08:28:32 2008 +1100
+
+    Previous commit fixed issue #21 and not #12. No change in this commit
+
+ Makefile.am |    1 -
+ 1 files changed, 0 insertions(+), 1 deletions(-)
+
+commit 456001b547c615ca63375196a15f44060804eb13
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Fri Nov 21 08:17:02 2008 +1100
+
+    Fix Issue #12: Cannot build pywebkitgtk
+    http://code.google.com/p/pywebkitgtk/issues/detail?id=21
+    
+    Disable a line in the code generator to make it build again.
+    Will need to figure out why that line is failing.
+
+ Makefile.am |    4 +++-
+ 1 files changed, 3 insertions(+), 1 deletions(-)
+
+commit 01d88eeaae3cfaba37d2f46d33e0d6aa2a72e63f
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Wed Nov 19 22:18:20 2008 +1100
+
+    Implement per-version inclusion of WebKit .defs
+
+ Makefile.am               |   24 +-
+ configure.ac              |   29 +-
+ webkit/webkit-1.0.2.defs  |  716 +++++++++++++++++++++++++++++++++++++++++++++
+ webkit/webkit-dev.defs    |  699 +-------------------------------------------
+ webkit/webkit-stable.defs |  716 ---------------------------------------------
+ 5 files changed, 747 insertions(+), 1437 deletions(-)
+
+commit c5b15c5bfa77952dc54d0667da0b49b64b019d97
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Wed Nov 19 00:45:23 2008 +1100
+
+    Add unmark_text_matches to the API
+    
+    http://code.google.com/p/pywebkitgtk/issues/detail?id=20
+    unmark_text_matches missing API
+    Patch by: aafshar http://code.google.com/u/aafshar/
+
+ webkit/webkit-dev.defs    |    6 ++++++
+ webkit/webkit-stable.defs |    6 ++++++
+ 2 files changed, 12 insertions(+), 0 deletions(-)
+
+commit eed684afbafc8f610807c87a04aa68aab7d1a950
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Tue Nov 18 23:13:54 2008 +1100
+
+    Move all gjs bindings-related stuff in gjs/
+
+ Makefile.am        |   21 +-
+ gjs.defs           |  120 ------
+ gjs.override       |   68 ----
+ gjs/gjs.c          | 1046 ----------------------------------------------------
+ gjs/gjs.defs       |  120 ++++++
+ gjs/gjs.override   |   68 ++++
+ gjs/gjs_internal.c | 1046 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 7 files changed, 1244 insertions(+), 1245 deletions(-)
+
+commit 0d58f0264f602700715bd53bce985296a640ba8f
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Tue Nov 18 22:54:07 2008 +1100
+
+    Move webkit bindings-related files to webkit
+    
+    This modularizes the folder structures a bit
+
+ Makefile.am               |   37 ++--
+ configure.ac              |    4 +-
+ webkit-dev.defs           |  710 ---------------------------------------------
+ webkit-stable.defs        |  710 ---------------------------------------------
+ webkit.override           |  118 --------
+ webkit/webkit-dev.defs    |  710 +++++++++++++++++++++++++++++++++++++++++++++
+ webkit/webkit-stable.defs |  710 +++++++++++++++++++++++++++++++++++++++++++++
+ webkit/webkit.override    |  118 ++++++++
+ webkit/webkitmodule.c     |   66 +++++
+ webkitmodule.c            |   66 -----
+ 10 files changed, 1625 insertions(+), 1624 deletions(-)
+
+commit 5494cec6064dcb4e9ade4379d154ce1b5262a414
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Tue Nov 18 18:23:56 2008 +1100
+
+    Add initial support for defect #12:
+    
+    http://code.google.com/p/pywebkitgtk/issues/detail?id=12
+    defect #12 - JavaScript execution / evaluation capabilities
+    
+    It's currently turned off by default since we need to modify the way we load
+    the webkit module. You can turn it on by adding --with-gjs to configure or
+    autogen.sh if you're tracking the development repositories.
+
+ Makefile.am                           |   58 ++-
+ configure.ac                          |   24 +
+ gjs.defs                              |  120 ++++
+ gjs.override                          |   68 +++
+ gjs/gjs.c                             | 1046 +++++++++++++++++++++++++++++++++
+ gjs/gjs.h                             |  128 ++++
+ javascriptcore/javascriptcore_types.c |   30 +
+ javascriptcore/javascriptcore_types.h |   22 +-
+ webkit.override                       |    6 +-
+ webkitmodule.c                        |   16 +-
+ 10 files changed, 1499 insertions(+), 19 deletions(-)
+
+commit 48cd58c3cbdcc0ddfaf49370225233a38f7e292f
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Sun Nov 16 16:56:21 2008 +1100
+
+    Split .defs file into -stable and -dev versions.
+    
+    -stable is for upstream released/packaged WebKit/Gtk versions
+    -dev is for ToT and other branched versions
+
+ Makefile.am        |   22 +-
+ configure.ac       |   15 ++
+ webkit-dev.defs    |  710 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ webkit-stable.defs |  710 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ webkit.defs        |  710 ----------------------------------------------------
+ 5 files changed, 1448 insertions(+), 719 deletions(-)
+
+commit 303bddf2d5d8b3a9dc4d717e2d53972516399717
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Sun Nov 16 16:12:03 2008 +1100
+
+    bump micro version to 99 for 1.1 release
+
+ configure.ac |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit 70756b1a767ea322d32023771f93f698634a8694
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Sat Nov 1 13:26:41 2008 +1100
+
+    PyWebKitGtk 1.0.2 release
+
+ NEWS         |    7 +++++++
+ configure.ac |    8 +-------
+ 2 files changed, 8 insertions(+), 7 deletions(-)
+
+commit 35f641341b27c3e378946291afef2418d501548d
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Sun Oct 19 15:01:02 2008 +1100
+
+    pygtk-codegen-2.0 is deprecated, use pygobject-codegen-2.0 instead
+    http://code.google.com/p/pywebkitgtk/issues/detail?id=19
+    
+    Patch by Jason Ribeiro (http://code.google.com/u/jason.ribeiro)
+    
+     * Use pygobject-codegen whenever possible
+     * use enum instead of define-enum in webkit.defs
+
+ Makefile.am  |    2 +-
+ configure.ac |    6 +++---
+ webkit.defs  |    4 ++--
+ 3 files changed, 6 insertions(+), 6 deletions(-)
+
+commit c2b1dcd31ce2e563b520b013f2da70d4a9e9d00f
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Sat Oct 18 12:51:26 2008 +1100
+
+    http://code.google.com/p/pywebkitgtk/issues/detail?id=18
+    demos/webbrowser.py style mismatch
+    
+    Patch by Steve Milner (http://code.google.com/u/steve.milner/)
+
+ demos/webbrowser.py |   56 ++++++++++++++++++++++++++++++---------------------
+ 1 files changed, 33 insertions(+), 23 deletions(-)
+
+commit a7aef9fa9d6fa675b93237af7d791d54176d7e5b
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Wed Aug 20 08:33:50 2008 +1000
+
+    remove pywebkitgtk-1.0.pc when invoking make's clean target
+
+ Makefile.am |    3 ++-
+ 1 files changed, 2 insertions(+), 1 deletions(-)
+
+commit ea57a27b40cd9041deb1aaae727ebafbbab5070a
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Thu Aug 14 23:26:13 2008 +1000
+
+    updated NEWS for 1.0.1
+    (cherry picked from commit 91a7433e43dae38f74b1ccbdc8d7c3ff250e88ef)
+
+ NEWS |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit 997d1af11638289e2770462aade93bba9b958f31
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Thu Aug 14 23:14:14 2008 +1000
+
+    add copyright info for javascriptcore.h and webkit.defs
+    (cherry picked from commit 253d58aa8ac0ab4e264e6aadbf7dbb07d6f05d35)
+
+ javascriptcore/javascriptcore_types.h |   19 +++++++++++++++++++
+ webkit.defs                           |   19 +++++++++++++++++++
+ 2 files changed, 38 insertions(+), 0 deletions(-)
+
+commit 18fb826b41e2c9efc5648045d7e16bb6d6cf9e4b
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Thu Aug 14 08:07:29 2008 +1000
+
+    webkit.override: copyright update
+
+ webkit.override |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit f4fd1ac38be6c00bcc3c0eaafd04c241e0a447fc
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Tue Aug 12 08:34:03 2008 +1000
+
+    fix versioning definitions
+
+ configure.ac |    9 +++++----
+ 1 files changed, 5 insertions(+), 4 deletions(-)
+
+commit b6ae7f90526003ee6097880f74c273a2883813cf
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Tue Aug 12 08:18:10 2008 +1000
+
+    NEWS updated for 0.9
+
+ NEWS |    5 ++++-
+ 1 files changed, 4 insertions(+), 1 deletions(-)
+
+commit f7f682924f3ba41b2a023939d6f9e20f9416b4b8
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Sun Aug 10 11:55:09 2008 +1000
+
+    Fixed http://code.google.com/p/pywebkitgtk/issues/detail?id=8 (LDFLAGS not set)
+
+ Makefile.am  |    4 ++--
+ configure.ac |    2 ++
+ 2 files changed, 4 insertions(+), 2 deletions(-)
+
+commit 15c3bd78e7bcb2b3809c29b1a3b9c7ac1398ea56
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Sun Aug 10 09:46:57 2008 +1000
+
+    add copying, install, authors et al in EXTRA_DIST
+
+ Makefile.am |    6 ++++++
+ 1 files changed, 6 insertions(+), 0 deletions(-)
+
+commit 0064740c74ac16299c40c8fdfacd321ebafa1de3
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Mon Aug 4 23:21:49 2008 +1000
+
+    add m4 to ACLOCAL_AMFLAGS
+
+ configure.ac |    2 ++
+ 1 files changed, 2 insertions(+), 0 deletions(-)
+
+commit 30b5d041979c5248743bce14c98dd9a3de265865
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Mon Aug 4 08:54:55 2008 +1000
+
+    bump version to 0.9
+
+ configure.ac |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit 43a4ba5a70df2afcd25eaec190555dd44a7d7f9e
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Mon Aug 4 08:50:53 2008 +1000
+
+    added pkconfig file
+
+ configure.ac      |    5 ++++-
+ pywebkitgtk.pc.in |    9 +++++++++
+ 2 files changed, 13 insertions(+), 1 deletions(-)
+
+commit 66a56de1e5bbe1158b6add2bd2a30b1fe4516134
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Mon Aug 4 08:39:24 2008 +1000
+
+    add comments: why we're checking for libxslt and pygtk stuff
+
+ configure.ac |    4 +++-
+ 1 files changed, 3 insertions(+), 1 deletions(-)
+
+commit 8408443e77c3b588513e79fc10bac8b5c7578256
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Mon Aug 4 08:38:56 2008 +1000
+
+    point web and source locations to google code hosting; remove NOTES section
+
+ README |   25 +++----------------------
+ 1 files changed, 3 insertions(+), 22 deletions(-)
+
+commit 4549fa823114ab2aac6df09b2669a2dbc8732772
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Mon Aug 4 08:35:17 2008 +1000
+
+    removed TODO. TODOs should be in the pywebkitgtk issues site
+
+ TODO |   12 ------------
+ 1 files changed, 0 insertions(+), 12 deletions(-)
+
+commit 3954ac32492f22a3919fc05788d1f0e5f0086d6b
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Mon Aug 4 08:32:04 2008 +1000
+
+    Updated AUTHORS and added new MAINTAINERS file
+
+ AUTHORS     |   17 ++++-------------
+ MAINTAINERS |    4 ++++
+ 2 files changed, 8 insertions(+), 13 deletions(-)
+
+commit 2de7bf0d894b0af9d5343e8234862f5764a1809a
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Thu Jul 17 09:17:04 2008 +1000
+
+    add more defines; allow other versions of automake
+
+ configure.ac |   13 ++++++++++---
+ 1 files changed, 10 insertions(+), 3 deletions(-)
+
+commit f7768ddba3cc37f79f0559ed59414548419c7284
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Thu Jul 17 09:06:20 2008 +1000
+
+    add versioning info and match it with upstream WebKit
+
+ configure.ac |   19 +++++++++++++++++--
+ 1 files changed, 17 insertions(+), 2 deletions(-)
+
+commit 0c92cfe1b1ca99d29615e12ac2dfedfe7af50667
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Tue Jul 8 23:41:45 2008 +1000
+
+    changed references to page to view in function parameters
+
+ demos/webbrowser.py |   25 ++++++++++++-------------
+ 1 files changed, 12 insertions(+), 13 deletions(-)
+
+commit 408609294c8a36b9519f16b131ddc8a24c8ba7fb
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Tue Jul 8 23:18:30 2008 +1000
+
+    [http://code.google.com/p/pywebkitgtk/issues/detail?id=3]
+    Fix Issue 3: make fails if libxslt-devel isn't installed
+    
+    Check for libxslt on configure
+
+ configure.ac |    3 ++-
+ 1 files changed, 2 insertions(+), 1 deletions(-)
+
+commit 6ea0dedbf44cd49060cd3e08ceee72f76d99ecd5
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Mon Jun 23 23:23:02 2008 +1000
+
+    wrap GEnums
+
+ demos/webbrowser.py |    2 +-
+ webkit.defs         |   30 ++++++++++++++++++++----------
+ 2 files changed, 21 insertions(+), 11 deletions(-)
+
+commit f8091d28c16c9228347e0405b27b8aebcc967c39
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Sun Jun 1 10:59:20 2008 +1000
+
+    Added zoom API
+
+ demos/webbrowser.py |   44 ++++++++++++++++++++++++++++++++++++++++----
+ webkit.defs         |   42 ++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 82 insertions(+), 4 deletions(-)
+
+commit 89f194a90646d164d66ecab06c464c8e1882e2e4
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Sat May 10 20:25:53 2008 +1000
+
+    commented rolled-back upstream WebKitWebView API
+
+ webkit.defs |   46 +++++++++++++++++++++++-----------------------
+ 1 files changed, 23 insertions(+), 23 deletions(-)
+
+commit 5276cb3d735e470b3473ea2c39839c4d7f018609
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Wed Apr 30 23:03:27 2008 +1000
+
+    Sync with WebKit r32727
+    
+    	modified:   webkit.defs
+    
+    Added in WebView:
+      - set_settings
+      - get_settings
+      - get_background_alpha
+      - set_background_alpha
+      - set_background_color
+
+ webkit.defs |   39 +++++++++++++++++++++++++++++++++++++++
+ 1 files changed, 39 insertions(+), 0 deletions(-)
+
+commit c3a49d2b40c97f91e0b59fc791001072ec5b8717
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Sat Apr 26 23:35:07 2008 +1000
+
+    filename subst '-' with '_'
+
+ Makefile.am                           |    4 +-
+ javascriptcore/javascriptcore-types.c |   39 ---------------------------------
+ javascriptcore/javascriptcore-types.h |   19 ----------------
+ javascriptcore/javascriptcore_types.c |   36 ++++++++++++++++++++++++++++++
+ javascriptcore/javascriptcore_types.h |   19 ++++++++++++++++
+ webkit.override                       |    2 +-
+ 6 files changed, 58 insertions(+), 61 deletions(-)
+
+commit e8d078d462bb2d7a7a4c13a90d32fa0e9f5151f7
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Sat Apr 26 23:30:46 2008 +1000
+
+    move javascriptcore sources to javascriptcore/
+
+ Makefile.am                           |    6 ++--
+ javascriptcore-types.c                |   39 ---------------------------------
+ javascriptcore-types.h                |   19 ----------------
+ javascriptcore/javascriptcore-types.c |   39 +++++++++++++++++++++++++++++++++
+ javascriptcore/javascriptcore-types.h |   19 ++++++++++++++++
+ webkit.override                       |    2 +-
+ 6 files changed, 62 insertions(+), 62 deletions(-)
+
+commit 562f6ea921f40264395f37d30eec3fb5251d17ed
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Sat Apr 26 22:52:28 2008 +1000
+
+    fix demo webbrowser
+
+ demos/webbrowser.py |   47 +++++++----------------------------------------
+ 1 files changed, 7 insertions(+), 40 deletions(-)
+
+commit 9824a49547915d4b25d290771e7681e6a3e196ef
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Sun Apr 6 13:42:17 2008 +1000
+
+    fix build scripts for make dist
+
+ Makefile.am |   14 +++++++-------
+ 1 files changed, 7 insertions(+), 7 deletions(-)
+
+commit 3f0f599b4008aef2b396e35df90a9879f995752f
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Tue Feb 19 21:20:29 2008 +1100
+
+    support webkit_web_view_set/get_transparent introduced in -r30385
+
+ webkit.defs |   15 +++++++++++++++
+ 1 files changed, 15 insertions(+), 0 deletions(-)
+
+commit 1407c5e4ccd866bd0b6224f0d0438787c6c8a0f6
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Tue Feb 19 20:35:07 2008 +1100
+
+    support webkit_web_view_get_focused_frame from -r30384
+
+ webkit.defs |    6 ++++++
+ 1 files changed, 6 insertions(+), 0 deletions(-)
+
+commit 9a132f559971d8ff539b8b1ce41ec107c4bf9cd2
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Tue Feb 19 20:28:34 2008 +1100
+
+    moved webbrowser.py into demos dir
+
+ demos/webbrowser.py |  307 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ webbrowser.py       |  307 ---------------------------------------------------
+ 2 files changed, 307 insertions(+), 307 deletions(-)
+
+commit 4e0291db50a911efcba66679078849068fb81f9c
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Sun Feb 17 22:00:24 2008 +1100
+
+    webkit.override: fix _get_back_list_limit and _forward_list_with_limit override
+
+ webkit.override |   32 +++++++++++++++++---------------
+ 1 files changed, 17 insertions(+), 15 deletions(-)
+
+commit a8cc1b4856d72023e616ea87e47aefae92047092
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Sun Feb 10 06:39:37 2008 +1100
+
+    Renamed module from webkitgtk to webkit
+
+ Makefile.am        |   34 ++--
+ autogen.sh         |    1 +
+ webbrowser.py      |    6 +-
+ webkit.defs        |  579 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ webkit.override    |  116 +++++++++++
+ webkitgtk.defs     |  579 ----------------------------------------------------
+ webkitgtk.override |  116 -----------
+ webkitgtkmodule.c  |   54 -----
+ webkitmodule.c     |   54 +++++
+ 9 files changed, 770 insertions(+), 769 deletions(-)
+
+commit 948361b90191ef6f9cfee3481eec42d5146f08dd
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Sat Feb 9 09:00:01 2008 +1100
+
+    Fix build scripts and library dependency. Remove autogen dependency on GNOME
+    
+    	modified:   Makefile.am
+    	modified:   autogen.sh
+    	modified:   configure.ac
+
+ Makefile.am  |   14 ++++-------
+ autogen.sh   |   77 ++++++++++++++++++++++++++++++++++------------------------
+ configure.ac |   22 ++++++----------
+ 3 files changed, 58 insertions(+), 55 deletions(-)
+
+commit cad501f0247bcdc7040dc3cc173364eec2ca695f
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Mon Feb 4 21:16:04 2008 +1100
+
+    webkitgtk.override: add webkit_web_settings_get_type; webbrowser.py: add populate-menu callback
+
+ webbrowser.py      |    6 ++++++
+ webkitgtk.override |    1 +
+ 2 files changed, 7 insertions(+), 0 deletions(-)
+
+commit daf7ef613447dcf5a41260ecd9ffbc1d13d01c44
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Sun Feb 3 12:53:11 2008 +1100
+
+    Updated to WebKit as of -r29943
+    
+        - webkit/gtk pkg-config fixes -r29909
+        - webkit/gtk header relocations -r29898
+        - webkit/gtk WebSettings API -29723
+        - webkit/gtk BackForwardList and HistoryItem API -r29821
+    
+    	modified:   Makefile.am
+    	modified:   configure.ac
+    	modified:   webbrowser.py
+    	modified:   webkitgtk.defs
+    	modified:   webkitgtk.override
+    	modified:   webkitgtkmodule.c
+
+ Makefile.am        |    2 +-
+ configure.ac       |    4 +-
+ webbrowser.py      |   58 +++++++++--
+ webkitgtk.defs     |  274 +++++++++++++++++++++++++++++++++++++++++++++++++---
+ webkitgtk.override |   87 +++++++++++++++-
+ webkitgtkmodule.c  |    2 +-
+ 6 files changed, 393 insertions(+), 34 deletions(-)
+
+commit 0465fc911efbec79302e2b73488ab1081ecc3465
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Fri Dec 28 06:38:03 2007 +1100
+
+    update api wrapping, call init_pygtk in webkitgtkmodule.c (thanks jdahlin), add webkitgtk.errors in MAINTAINERCLEANFILES
+
+ Makefile.am       |    5 ++-
+ webbrowser.py     |    2 +-
+ webkitgtk.defs    |   86 +++++++++++++++++++++++++++++++++++++++++++++++++++--
+ webkitgtkmodule.c |    4 +-
+ 4 files changed, 89 insertions(+), 8 deletions(-)
+
+commit 276ff8ada5f09eedbd3fe953b93852014059175a
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Thu Dec 13 10:21:31 2007 +1100
+
+    wrap webkit_web_frame_get_global_context
+
+ Makefile.am        |   12 ++++++++----
+ configure.ac       |   15 ++++++++++++---
+ webkitgtk.defs     |    7 +++++--
+ webkitgtk.override |   15 ++++++++++++++-
+ 4 files changed, 39 insertions(+), 10 deletions(-)
+
+commit 68b4a1b6118a49dfb592811fac504c24970d2ce2
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Thu Dec 13 10:20:48 2007 +1100
+
+    add initial work on wrapping JavaScriptCore
+
+ javascriptcore-types.c |   39 +++++++++++++++++++++++++++++++++++++++
+ javascriptcore-types.h |   19 +++++++++++++++++++
+ 2 files changed, 58 insertions(+), 0 deletions(-)
+
+commit 8bcb7e15f652a469775bf304d7acf71e7838ce5c
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Thu Dec 13 10:19:48 2007 +1100
+
+    Change licence to Library GPL 2
+
+ COPYING |  267 ++++++++++++++++++++++++++++-----------------------------------
+ 1 files changed, 119 insertions(+), 148 deletions(-)
+
+commit 2e6aabdf8a46350d53932454690908887aa13718
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Mon Dec 10 18:20:23 2007 +1100
+
+    moved python.m4 to m4/
+
+ m4/python.m4 |   62 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ python.m4    |   62 ----------------------------------------------------------
+ 2 files changed, 62 insertions(+), 62 deletions(-)
+
+commit a942245635f442418579e17c3ff15c0615603772
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Sat Dec 1 16:55:27 2007 +1100
+
+    webkit gtk upstream API stabilization change - r28273
+
+ TODO               |    2 +-
+ webbrowser.py      |   53 +++++++++++++++----
+ webkitgtk.defs     |  146 ++++++++++++++++++++++++++--------------------------
+ webkitgtk.override |   12 ++--
+ webkitgtkmodule.c  |    2 +-
+ 5 files changed, 124 insertions(+), 91 deletions(-)
+
+commit 8a76acd4a413058a1da5d304cf6261a965c249ec
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Mon Nov 26 11:03:35 2007 +1100
+
+    updated api return types and some cleanups on the definitions file
+
+ webkitgtk.defs |   23 ++++++++++++++++-------
+ 1 files changed, 16 insertions(+), 7 deletions(-)
+
+commit 6020925501a19e2ca9f3bdd48a44cf08007f7433
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Sun Nov 25 10:36:21 2007 +0000
+
+    autogen.sh: updated; wrap webkitgtkframe functions; added webkitnetwork request functions
+
+ TODO               |   12 ++++
+ autogen.sh         |   43 ++++++++++++++-
+ webkitgtk.defs     |  151 ++++++++++++++++++++++++++++++++++++++++++---------
+ webkitgtk.override |    2 +
+ 4 files changed, 178 insertions(+), 30 deletions(-)
+
+commit f7a4d5f173ac3e5394138bcf3a640aeca28d0ac8
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Tue Oct 23 08:22:11 2007 +1000
+
+    Autogenerate ChangeLog from git log
+
+ Makefile.am |    5 +++++
+ 1 files changed, 5 insertions(+), 0 deletions(-)
+
+commit be3ec79c0f6e4b9d98caa55bafdc46c9f59eb2e1
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Tue Oct 23 08:19:43 2007 +1000
+
+    copyright and doc update
+    
+    	deleted:    ChangeLog
+             - empty, unnecessary
+    	modified:   README
+             - change ordering of section
+    	modified:   webkitgtkmodule.c
+             - added Copyright (me)
+
+ README            |   21 +++++++++++----------
+ webkitgtkmodule.c |    3 ++-
+ 2 files changed, 13 insertions(+), 11 deletions(-)
+
+commit e878b62e4db9e576b439b37ae95b668c181ad80f
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Mon Oct 22 18:44:01 2007 +1000
+
+    added support for webkitgtk's html5 client-side storage support
+
+ Makefile.am       |   13 ++++++++++++-
+ webkitgtkmodule.c |    8 +++++++-
+ 2 files changed, 19 insertions(+), 2 deletions(-)
+
+commit 333ebf16c7b407f17ccde1df205fe8d0cc09b8ef
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Thu Oct 4 12:03:11 2007 +1000
+
+    wrap webkit_page_execute_script: http://bugs.webkit.org/show_bug.cgi?id=15255
+
+ webkitgtk.defs |    9 +++++++++
+ 1 files changed, 9 insertions(+), 0 deletions(-)
+
+commit f121b4bb2340020d992414cd00362118389cfe16
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Thu Oct 4 11:39:02 2007 +1000
+
+    API namespace update r26022
+
+ configure.ac       |    2 +-
+ webkitgtk.defs     |   76 ++++++++++++++++++++++++++--------------------------
+ webkitgtk.override |    4 +-
+ 3 files changed, 41 insertions(+), 41 deletions(-)
+
+commit 0972cbc2aebb486eca9a6cb4170c8e315bbdd1a2
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Tue Oct 2 08:34:33 2007 +1000
+
+    webbrowser.py: implement hovering-over-link callback
+
+ webbrowser.py |   13 +++++++++++--
+ 1 files changed, 11 insertions(+), 2 deletions(-)
+
+commit ff425012e272d75392c6dde849ac827763c3738c
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Mon Oct 1 09:00:59 2007 +1000
+
+    bump version to 0.3; add webbrowser.py in EXTRA_DIST
+
+ Makefile.am  |    1 +
+ configure.ac |    2 +-
+ 2 files changed, 2 insertions(+), 1 deletions(-)
+
+commit 9e051106413cd9cdb32717f6c73603d073ef4604
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Mon Oct 1 07:54:13 2007 +1000
+
+    updated documentation
+
+ AUTHORS |    5 ++++-
+ NEWS    |    5 +++++
+ README  |    1 +
+ 3 files changed, 10 insertions(+), 1 deletions(-)
+
+commit ada96aa8fd597f48eb6a7bc62bc0d70cc4ab90ab
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Mon Oct 1 07:40:21 2007 +1000
+
+    webbrowser.py: remove unused WebToolbar methods
+
+ webbrowser.py |   31 -------------------------------
+ 1 files changed, 0 insertions(+), 31 deletions(-)
+
+commit c1d1a71c9457ddb46c5e7ccbdbe0988acb3121f5
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Mon Oct 1 07:39:45 2007 +1000
+
+    webkit.override: fix wrong c-name of get_page
+
+ webkitgtk.defs |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit f1d50b67b13db751eca2f7701bdf3a2b42e84519
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Sun Sep 23 20:49:48 2007 +1000
+
+    rename all references of gdk to gtk - due to recent upstream renaming
+
+ Makefile.am  |    6 +++---
+ configure.ac |    8 ++++----
+ 2 files changed, 7 insertions(+), 7 deletions(-)
+
+commit 96da61cc5650784556b09cb7b3649ebe2c17ee33
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Thu Sep 20 19:23:48 2007 +1000
+
+    Fix constructor return types and method ownership (for memory management)
+    
+    	modified:   webbrowser.py
+             - Add frame.get_title and frame.get_location
+    	modified:   webkitgtk.defs
+             - WebKitGtkPage constructor should return GtkWidget*
+             - WebKitGtkFrame constructor should return GObject*
+             - get_page, get_title, get_location: add caller-owns-return
+
+ webbrowser.py  |   13 ++++++-------
+ webkitgtk.defs |    7 +++++--
+ 2 files changed, 11 insertions(+), 9 deletions(-)
+
+commit 0a388ad2dfaa7cbb6f00f0ea5169d82fa1875190
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Thu Sep 20 18:02:52 2007 +1000
+
+    clean up get_page/webkit_gtk_frame_get_page method
+
+ webkitgtk.defs |    5 +----
+ 1 files changed, 1 insertions(+), 4 deletions(-)
+
+commit a2e503f57235b5828ed8ea7866c887e801dc21a1
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Thu Sep 20 17:41:14 2007 +1000
+
+    wrapped WebKitGtkFrame methods
+    
+    	modified:   Makefile.am
+              - add webkitgtk.errors in DISTCLEANFILES
+              - add gen-webkitgtk.c in CLEANFILES
+    	modified:   webbrowser.py
+              - comment out check if frame is main frame because it causes a segfault
+    	modified:   webkitgtk.defs
+              - uncommented out Frame/WebKitGtkFrame class and methods
+    	modified:   webkitgtk.override
+              - uncommented out webkitgtkframe.h include
+
+ Makefile.am        |    3 +++
+ webbrowser.py      |    5 +++--
+ webkitgtk.defs     |   32 ++++++++++++++++++++++----------
+ webkitgtk.override |    6 +++++-
+ 4 files changed, 33 insertions(+), 13 deletions(-)
+
+commit ac1c2898b4e4ade3f5304b5fc6cc8a9546718c57
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Thu Sep 20 11:00:51 2007 +1000
+
+    Switch to LGPL 2.1 for the licence
+
+ COPYING |  674 +++++++++++++++++++++++++++++++++++++++------------------------
+ 1 files changed, 422 insertions(+), 252 deletions(-)
+
+commit 9fe2394494a0becbd763a3aebff239e3222d7311
+Author: Tuukka Hastrup <tuukka@memento.(none)>
+Date:   Thu Sep 20 01:37:15 2007 +0300
+
+    Add PyErr_Print() to module loading per zecke's suggestion.
+
+ webkitgtkmodule.c |    1 +
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+
+commit 4175cd2f4cba88b612ac3ed4ab8ce7cea7144e13
+Author: Tuukka Hastrup <tuukka@memento.(none)>
+Date:   Wed Sep 19 16:19:24 2007 +0300
+
+    Stop the build process on any pygtk-codegen warnings.
+
+ Makefile.am |    3 ++-
+ 1 files changed, 2 insertions(+), 1 deletions(-)
+
+commit 7751b288e82b9f7dadde99478a96d6873b8f01c2
+Author: Tuukka Hastrup <tuukka@memento.(none)>
+Date:   Wed Sep 19 15:22:00 2007 +0300
+
+    Fix Page.get_main_frame from merge.
+
+ webkitgtk.defs |    5 +----
+ 1 files changed, 1 insertions(+), 4 deletions(-)
+
+commit b12c13303b70dcdb06e53232d920da71b3e9ea6a
+Merge: 2d657e7 fa2b0cb
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Wed Sep 19 21:38:08 2007 +1000
+
+    merged tuukkah's changes; added constructor functions in .defs
+
+commit 2d657e7e39f83e8af7b7200b7c3089e419f8769b
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Wed Sep 19 21:11:15 2007 +1000
+
+    wrap webkitgtkframe and most of webkitgtkpage; set scroll policy to auto in webbrowser.py
+
+ webbrowser.py  |    9 ++-
+ webkitgtk.defs |  158 +++++++++++++++++++++++++++++++++++++++++++++++++++++---
+ 2 files changed, 156 insertions(+), 11 deletions(-)
+
+commit fa2b0cb7bd59c2fe7f5e82a48ee05d42ebf31d74
+Author: Tuukka Hastrup <tuukka@memento.(none)>
+Date:   Wed Sep 19 13:59:16 2007 +0300
+
+    Wrap Page.reload and Page.get_main_frame.
+
+ webbrowser.py      |    8 ++++----
+ webkitgtk.defs     |   22 ++++++++++++++++++++++
+ webkitgtk.override |    2 ++
+ 3 files changed, 28 insertions(+), 4 deletions(-)
+
+commit cdd30f3222871aedb898438cc667158b4c2c8a82
+Author: Tuukka Hastrup <tuukka@memento.(none)>
+Date:   Wed Sep 19 12:27:57 2007 +0300
+
+    Make Page.load_string and Page.load_html_string work.
+
+ webbrowser.py  |   13 +++++++++++--
+ webkitgtk.defs |   18 ++++++++----------
+ 2 files changed, 19 insertions(+), 12 deletions(-)
+
+commit 581e1911cd2ab51439691d5b1b87a673fb4c8c63
+Author: Tuukka Hastrup <tuukka@memento.(none)>
+Date:   Tue Sep 18 15:15:03 2007 +0300
+
+    Start webbrowser.py with the interpreter line
+
+ webbrowser.py |    1 +
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+
+commit 644dda543b3c54ac61de47e8b5b3106e1e81de84
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Tue Sep 18 18:30:10 2007 +1000
+
+    complete content
+
+ README |   66 +++++++++++++++++++++++++++++++++++++++++++++++++++++----------
+ 1 files changed, 55 insertions(+), 11 deletions(-)
+
+commit 724be15fe14fe6ac2858ae396e9e92a5bae2ed93
+Author: Tuukka Hastrup <tuukka@memento.(none)>
+Date:   Tue Sep 18 08:46:51 2007 +0300
+
+    Add back py- to webkitgtk name in AC_INIT
+
+ configure.ac |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit 52a41fca30de6f5209863d7b25d0a652859c965d
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Tue Sep 18 00:46:14 2007 +1000
+
+    wrapped more definitions and implemented new signals in webbrowser
+    
+    	modified:   webbrowser.py
+              - connect to hovering-over-link, status-bar-text-changed
+                icon-loaded, selection-changed, set-scroll-adjustments
+    
+    	modified:   webkitgtk.defs
+              - added load_html_string and load_string
+
+ webbrowser.py  |   37 ++++++++++++++++++++++++++++++-------
+ webkitgtk.defs |   42 ++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 72 insertions(+), 7 deletions(-)
+
+commit b1d569bd7a5d1d529a3fec4b89add045f3b58811
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Mon Sep 17 23:19:00 2007 +1000
+
+    AUTHORS, README: initial content
+
+ AUTHORS |   11 +++++++++++
+ README  |   31 +++++++++++++++++++++++++++++++
+ 2 files changed, 42 insertions(+), 0 deletions(-)
+
+commit 2115513fa70b8fc8b3febb3c40c116c9c9a75c8e
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Mon Sep 17 21:22:29 2007 +1000
+
+    fix module naming
+
+ Makefile.am       |    3 +--
+ configure.ac      |    2 +-
+ webkitgtkmodule.c |   10 +++++-----
+ 3 files changed, 7 insertions(+), 8 deletions(-)
+
+commit 570ac1d45ac4611d955cb3c1fe63b085bd206790
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Mon Sep 17 20:48:09 2007 +1000
+
+    fix module location; removed webkitgtk/ and webkigtk header files
+
+ webbrowser.py                 |  214 +++++++++++++++++++++++++++++++++++++++++
+ webkitgtk/webkitgtkdefines.h  |   48 ---------
+ webkitgtk/webkitgtkframe.h    |  102 -------------------
+ webkitgtk/webkitgtkpage.h     |  160 ------------------------------
+ webkitgtk/webkitgtksettings.h |  117 ----------------------
+ 5 files changed, 214 insertions(+), 427 deletions(-)
+
+commit a164cbf3a0fad77b2019fc8e98b05018c58a39c1
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Mon Sep 17 16:56:48 2007 +1000
+
+    	new file:   AUTHORS
+    	new file:   COPYING
+    	new file:   ChangeLog
+    	new file:   INSTALL
+    	new file:   NEWS
+    	new file:   README
+    	new file:   webkitgtk/__init__.py
+    	modified:   Makefile.am
+    	modified:   configure.ac
+             - copy config goodies from gnome-python-desktop
+    	modified:   webkitgtkmodule.c
+             - rename pywebkitgtk variable names to webkitgtk
+
+ COPYING               |  340 +++++++++++++++++++++++++++++++++++++++++++++++++
+ INSTALL               |  236 ++++++++++++++++++++++++++++++++++
+ Makefile.am           |   45 +++++--
+ configure.ac          |   33 ++++-
+ webkitgtkmodule.c     |    8 +-
+ 5 files changed, 636 insertions(+), 26 deletions(-)
+
+commit c3e17b4b135652d14c103fd1df5e5e7a12ce88f3
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Sun Sep 9 15:56:52 2007 +1000
+
+    webkitgtkmodule.c: rename webkit to webkitgtk
+
+ webkitgtkmodule.c |   12 ++++++------
+ 1 files changed, 6 insertions(+), 6 deletions(-)
+
+commit 11c15cc258a5ea9ea090b131700526775d140c1e
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Sun Sep 9 15:41:04 2007 +1000
+
+    rename to webkitgtk, removed Makefile.in
+
+ Makefile.am       |    8 +-
+ Makefile.in       |  635 -----------------------------------------------------
+ webkitgtk.defs    |    2 +-
+ webkitgtkmodule.c |   46 ++++
+ 4 files changed, 51 insertions(+), 640 deletions(-)
+
+commit c21ed6fc71b9db4d76495c7bede75408de248867
+Author: Jan Michael Alonzo <jmalonzo@unpluggable.com>
+Date:   Sun Sep 9 11:46:09 2007 +1000
+
+    initial revision
+
+ Makefile.am                   |   30 ++
+ Makefile.in                   |  635 +++++++++++++++++++++++++++++++++++++++++
+ autogen.sh                    |    5 +
+ configure.ac                  |   26 ++
+ python.m4                     |   62 ++++
+ webkitgtk.defs                |   34 +++
+ webkitgtk.override            |   19 ++
+ webkitgtk/webkitgtkdefines.h  |   48 +++
+ webkitgtk/webkitgtkframe.h    |  102 +++++++
+ webkitgtk/webkitgtkpage.h     |  160 +++++++++++
+ webkitgtk/webkitgtksettings.h |  117 ++++++++
+ 11 files changed, 1238 insertions(+), 0 deletions(-)

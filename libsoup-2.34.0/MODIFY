@@ -1,0 +1,21 @@
+Description of change made in libsoup to make it coordinate with Quark
+
+The libsoup library takes care of cookie handling and network
+connection via HTTP/HTTPS protocols for Webkit used as a tab process
+for Quark. We redirect all cookie handling and socket creation done in
+libsoup to the browser kernel.
+
+The changed we made is centralized in one file ./libsoup/soup-quark.c.
+In the file, there are functions to communicate with the browser
+kernel. 
+
+The list of changes we made in other existing libsoup files are as
+follows.
+
+./libsoup/soup-cookie-jar.c 
+-- soup_cookie_jar_get_cookies() 
+
+./libsoup/soup-socket.c
+-- soup_socket_connect_sync ()
+-- soup_socket_connect_async ()
+

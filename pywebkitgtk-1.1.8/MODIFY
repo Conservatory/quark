@@ -1,0 +1,15 @@
+Description of change made in pywebkit to make it coordinate with
+Quark
+
+The pywebkit library provides a thin interfacing layer from the C
+implementation of Webkit to Python. The pywebkit is an ongoing
+project, and it does not expose all internal data structures in Webkit
+to Python. Therefore, we added a couple more Python interfaces in
+pywebkit so that our tab process implemented in Python is fully
+functional.
+
+The list of changes we made in other existing libsoup files are as
+follows.
+
+./webkit/webkit-1.0.2.defs
+-- we added an interface definition for load_status()

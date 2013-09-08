@@ -1,0 +1,103 @@
+YNOT     := $(ROOT)/src/coq/Ynot.vo
+CAMLDIR  := $(ROOT)/src/ocaml
+
+YNOTLIB  := $(CAMLDIR)/ynot.cma
+YNOTLIBX := $(CAMLDIR)/ynot.cmxa
+
+ifndef OCAML
+  OCAMLC := ocamlc
+endif
+ifndef OCAMLOPT
+  OCAMLOPT := ocamlopt
+endif
+
+ifndef OBJS
+  OBJS := .extract/*.cmo ocaml/main.cmo
+endif
+
+R        := -R $(ROOT)/src/coq Ynot \
+            -R $(ROOT)/examples/Data Data \
+            -R $(ROOT)/examples/Parse Parse \
+            -R $(ROOT)/examples/IO IO
+
+ifdef VS
+  MODULES := $(VS)
+else
+  VS      := $(wildcard *.v)
+  VS      := $(filter-out Extract.v,$(VS))
+  MODULES := $(VS)
+endif
+
+
+ifndef COMPFLAGS
+  COMPFLAGS := -I ./ocaml -I .extract -I $(ROOT)/src/ocaml/ 
+endif
+
+EXTRACTED := $(wildcard .extract/*.ml)
+
+all: coq
+
+coq: Makefile.coq $(MODULES)
+	$(MAKE)  -f Makefile.coq
+
+Makefile.coq: $(ROOT)/src/coq/Ynot.vo $(MODULES)
+	coq_makefile $(MODULES) -I . $(R) \
+	    COQDEP = "coqdep -I . $(R)" \
+	    -o Makefile.coq \
+
+
+clean::
+	touch .depend
+	rm -rf .extract/
+	rm -f *.vo .depend Makefile.coq	main.byte main.native
+	rm -f ocaml/*.cmo ocaml/*.cmi ocaml/*.cmx ocaml/*.o
+	rm -f *.v.d
+
+$(ROOT)/src/coq/Ynot.vo: 
+	(cd $(ROOT)/src; $(MAKE))
+
+.SUFFIXES : .v .vo .ml .mli .cmo .cmi .cmx
+
+.ml.cmo:
+	$(OCAMLC) $(COMPFLAGS) $< -c
+
+.ml.cmx:
+	$(OCAMLOPT) $(COMPFLAGS) $< -c
+
+.mli.cmi:
+	$(OCAMLC) $(COMPFLAGS) $< -c
+
+$(CAMLDIR)/ynot.cma: $(CAMLDIR)/MlCoq.cmo $(CAMLDIR)/STImpl.cmo \
+    $(CAMLDIR)/HeapImpl.cmo $(CAMLDIR)/BasisImpl.cmo
+	$(OCAMLC) $(COMPFLAGS) -a -o $(CAMLDIR)/ynot.cma \
+              $(CAMLDIR)/MlCoq.cmo $(CAMLDIR)/STImpl.cmo \
+	      $(CAMLDIR)/HeapImpl.cmo $(CAMLDIR)/BasisImpl.cmo
+
+$(CAMLDIR)/ynot.cmxa: $(CAMLDIR)/MlCoq.cmx $(CAMLDIR)/STImpl.cmx \
+    $(CAMLDIR)/HeapImpl.cmx $(CAMLDIR)/BasisImpl.cmx
+	$(OCAMLOPT) $(COMPFLAGS) -a -o $(CAMLDIR)/ynot.cmxa \
+              $(CAMLDIR)/MlCoq.cmx $(CAMLDIR)/STImpl.cmx \
+	      $(CAMLDIR)/HeapImpl.cmx $(CAMLDIR)/BasisImpl.cmx
+
+.extract/$(EXTRACT_NAME).ml: coq
+	mkdir -p .extract
+	coqc -I . $(R) Extract.v
+
+build: .extract/$(EXTRACT_NAME).ml
+	mkdir -p .extract
+	ocamldep -I $(CAMLDIR)/ -I .extract -I ocaml .extract/*.ml  ocaml/*.ml $(CAMLDIR)/*.ml > .depend
+	ocamldep -I $(CAMLDIR)/ -I .extract -I ocaml .extract/*.mli ocaml/*.mli $(CAMLDIR)/*.mli >> .depend
+	OBJS='$(OBJS)' ROOT=$(ROOT) $(MAKE) -f $(ROOT)/examples/Makefile.ocaml ocaml
+
+
+ocaml: main.byte main.native
+
+main.byte: $(CAMLDIR)/ynot.cma ocaml/main.cmo $(EXTRACTED:%.ml=%.cmo)
+	$(OCAMLC) $(COMPFLAGS) -dllib dll_sendfd_stub.so -o main.byte \
+            $(CAMLDIR)/ynot.cma $(OBJS)
+
+main.native: $(CAMLDIR)/ynot.cmxa ocaml/main.cmx  $(EXTRACTED:%.ml=%.cmx)
+	$(OCAMLOPT) $(COMPFLAGS) -cclib dll_sendfd_stub.so -o main.native \
+            $(CAMLDIR)/ynot.cmxa $(patsubst %.cma,%.cmxa,$(patsubst %.cmo,%.cmx,$(OBJS)))
+
+.PHONY: all coq clean build ocaml

@@ -1,0 +1,63 @@
+Quark: A Secure Web Browser with A Verified Kernel
+
+A research browser built with a verified kernel to ensure that the
+kernel completely impervious to certain classes of attack following
+its formal security properties.
+
+http://goto.ucsd.edu/quark
+
+Directories & Files  
+
+  ./kernel/ - the Quark's kernel code written and formally
+  proved in Coq.
+
+  ./python-browser-8/ - the python implementation of the tab process
+  and cookie process, initiated by the kernel.
+
+  ./pywebkitgtk-1.1.8/MODIFY - a file describing the changes we made
+  in pywebkit to make it work with Quark.
+
+  ./libsoup-2.34.0/MODIFY - a file describing the changes we made in
+  libsoup to make it work with Quark.
+
+-------------------------------------------------------------------
+
+- Build & Install the Quark web browser
+
+You need lots of packages to build and install the Quark web browser.
+Since this is quite a research prototype, we strongly recommend you to
+use an isolated execution environment for Quark such as a virtual
+machine. Quark has been tested on Ubuntu 11.04. A basic installation
+process is automated in ./install_module.sh file, and you can execute
+the installation script to install most of the requied packages and
+compile Quark itself. If any of the required jobs fails because of
+some conflicts in your system, you have to open the installation
+script, and track down what went wrong manually. As future work, we
+have a plan to implement a fully functional installation script.
+
+-------------------------------------------------------------------
+
+- Test & Run Quark
+
+You can execute the browser
+
+cd ./vcr/ynot/examples/vcr
+./run.sh
+
+Function Key Binding:
+
+F1~F10 : Select a specific tab 
+F11    : Create a new tab
+
+Once the browser is initialized, you need to type in a trusted domain
+suffix.  For example, you can type in "google.com" to trust all the
+domains ending with google.com. The following websites belong to the
+trusted domain set : mail.google.com, maps.google.com, etc.
+
+Then you can see a tab is initialized with a blank screen. You need to
+enter a specific URL within the trusted domain suffix to visit it. A
+special tab command "\g URL" is used for that. For example, you can
+type in "\g http://www.google.com" on the tab whose trusted domain
+suffix is google.com. Now you can see that the tab navigated to
+http://www.google.com.
+
